@@ -34,4 +34,4 @@ function Calculator() {
 
 let calculator = new Calculator();
 
-module.exports =  calculator;
+module.exports = calculator;

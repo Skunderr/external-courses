@@ -13,7 +13,7 @@ body {
     border: 2px solid #fff; 
     outline: none;
 }
-.in-button {
+p {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,8 +24,8 @@ body {
     font-size: 23px;
     font-weight: 700;
     text-shadow: 1px 0px 0px #666666;
-    background: rgb(221,221,221);
     background: linear-gradient(180deg, rgba(221,221,221,1) 50%, rgba(183,183,183,0.21) 50%);
+    margin: 0;
 }
 p::before, p::after {
     content: "\2605";

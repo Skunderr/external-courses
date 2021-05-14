@@ -89,7 +89,6 @@ backlogAddCard.addEventListener('click', addTaskBacklog = () => {
     disableBtn(dataValues, readyAddCard, 'readyButtonText');
 }); 
 
-
 window.addEventListener('load', function() {
     const elements = JSON.parse(localStorage.getItem('inputElement'));
     const values = JSON.parse(localStorage.getItem('dataValues'));
@@ -227,7 +226,6 @@ readyTasksField.addEventListener("click", function (e) {
 
 });
 
-
 inprogressAddCard.addEventListener('click', addTaskinprogress = () => {
     const ulElement = document.querySelector('#inprogressItems');
 
@@ -250,7 +248,6 @@ inprogressAddCard.addEventListener('click', addTaskinprogress = () => {
         });
     }
 });
-
 
 inprogressTasksField.addEventListener("click", function (e) {
     const selectedInprogress = e.target;

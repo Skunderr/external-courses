@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-03</title>
+
+    <link rel="stylesheet" href="kanban.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body class="body">
+    <header class="header">
+        <div class="header__title-wrapper">
+            <div class="header__main-list">
+                <div class="main-listr__wrapper">
+                    <div class="main-list__string">
+                        <div class="main-list__circle"></div>
+                        <div class="main-list__line"></div>
+                    </div>
+                    <div class="main-list__string">
+                        <div class="main-list__circle"></div>
+                        <div class="main-list__line"></div>
+                    </div>
+                    <div class="main-list__string">
+                        <div class="main-list__circle"></div>
+                        <div class="main-list__line"></div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="header__title">awesome kanban board</h1>
+        </div>
+        <div class="header__button-wrapper">
+            <button class="header__create-button">
+                <img src="images/add-list.png" alt="#" class="header__add-img">
+                Create new list
+            </button>
+            <nav class="header__user-list">
+                <div class="header__user-wrapper">
+                    <img src="images/user-avatar.png" alt="#" class="header__user-img">
+                    <img src="images/arrow-down.png" alt="#" class="header__user-arrow">
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="kanban-board">
+        <div class="kanban-board__backlog">
+            <div class="kanban-board__main">
+                <h2 class="kanban-board__title">Backlog</h2>
+                <div class="kanban-board__main-list">
+                    <a href="#" class="kanban-board__main-link">
+                        <img src="images/ponits.png" alt="#" class="kanban-board__main-img">
+                    </a>
+                </div>
+            </div>
+            <div id="backlogField" class="kanban-board__field">
+                
+            </div>
+            <button id="backlogButton" class="kanban-board__add">
+                <img src="images/add-card.png" alt="#" class="kanban-board__add-plus">
+                <div class="kanban-board__add-text">Add card</div>
+            </button>
+        </div>
+        <div class="kanban-board__ready">
+            <div class="kanban-board__main">
+                <h2 class="kanban-board__title">Ready</h2>
+                <div class="kanban-board__main-list">
+                    <a href="#" class="kanban-board__main-link">
+                        <img src="images/ponits.png" alt="#" class="kanban-board__main-img">
+                    </a>
+                </div>
+            </div>
+            <div id="readyField" class="kanban-board__field">
+                
+            </div>
+            <button id="readyButton" class="kanban-board__add">
+                <img src="images/add-card.png" alt="#" class="kanban-board__add-plus">
+                <div id="readyButtonText" class="kanban-board__add-text">Add card</div>
+            </button>
+        </div>
+        <div class="kanban-board__in-progress">
+            <div class="kanban-board__main">
+                <h2 class="kanban-board__title">In Progress</h2>
+                <div class="kanban-board__main-list">
+                    <a href="#" class="kanban-board__main-link">
+                        <img src="images/ponits.png" alt="#" class="kanban-board__main-img">
+                    </a>
+                </div>
+            </div>
+            <div id="inprogressField" class="kanban-board__field">
+              
+            </div>
+            <button id="inprogressButton" class="kanban-board__add">
+                <img src="images/add-card.png" alt="#" class="kanban-board__add-plus">
+                <div id="inprogressButtonText" class="kanban-board__add-text">Add card</div>
+            </button>
+        </div>
+        <div class="kanban-board__finished">
+            <div class="kanban-board__main">
+                <h2 class="kanban-board__title">Finished</h2>
+                <div class="kanban-board__main-list">
+                    <a href="#" class="kanban-board__main-link">
+                        <img src="images/ponits.png" alt="#" class="kanban-board__main-img">
+                    </a>
+                </div>
+            </div>
+            <div id="finishedField" class="kanban-board__field">
+            
+            </div>
+            <button id="finishedButton" class="kanban-board__add">
+                <img src="images/add-card.png" alt="#" class="kanban-board__add-plus">
+                <div id="finishedButtonText" class="kanban-board__add-text">Add card</div>
+            </button>
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="footer__tasks">
+            <div class="footer__active-task">Active tasks: 0</div>
+            <div class="footer__finished-task">Finished tasks: 0</div>
+        </div>
+        <div class="footer__information">Kanban board by Nikolai Gogin, 2021</div>
+    </footer>
+
+    <script src="kanban.js"></script>
+    <script src="kanban-tasks.js"></script>
+</body>
+</html>

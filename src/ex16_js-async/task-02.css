@@ -1,0 +1,25 @@
+.body {
+    height: 100vh;
+    background: #dddcdc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    border-radius: 5px;
+    padding: 10px 5px;
+    width: 500px;
+    outline: none;
+    border: 1px solid #000;
+}
+
+.button {
+    border-radius: 5px;
+    padding: 10px 5px;
+    width: 100px;
+    background: #a6c1fa;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border: 1px solid #000;
+}

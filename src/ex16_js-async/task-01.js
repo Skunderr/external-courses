@@ -7,7 +7,7 @@ function ownFetch(url, method = 'GET', body = null) {
         
         xhr.responseType = 'json';
         
-        xhr.setRequestHeader('Content-Type','application/json')
+        xhr.setRequestHeader('Content-Type','application/json');
         
         xhr.onload = () => {
             if (xhr.status >= 400) {

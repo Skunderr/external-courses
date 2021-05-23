@@ -32,7 +32,7 @@
             <h1 class="header__title">awesome kanban board</h1>
         </div>
         <div class="header__button-wrapper">
-            <button id="createButton" class="header__create-button">
+            <button class="header__create-button">
                 <img src="images/add-list.png" alt="#" class="header__add-img">
                 Create new list
             </button>
@@ -44,8 +44,8 @@
             </nav>
         </div>
     </header>
-    <main id="mainKanban" class="kanban-board">
-        <div class="kanban-board__tasks kanban-board__backlog">
+    <main class="kanban-board">
+        <div class="kanban-board__backlog">
             <div class="kanban-board__main">
                 <h2 class="kanban-board__title">Backlog</h2>
                 <div class="kanban-board__main-list">
@@ -58,11 +58,11 @@
                 
             </div>
             <button id="backlogButton" class="kanban-board__add">
-                <span class="btnPlus">+</span> 
-                Add card
+                <img src="images/add-card.png" alt="#" class="kanban-board__add-plus">
+                <div class="kanban-board__add-text">Add card</div>
             </button>
         </div>
-        <div class="kanban-board__tasks">
+        <div class="kanban-board__ready">
             <div class="kanban-board__main">
                 <h2 class="kanban-board__title">Ready</h2>
                 <div class="kanban-board__main-list">
@@ -72,16 +72,14 @@
                 </div>
             </div>
             <div id="readyField" class="kanban-board__field">
-                <ul id="ulInReady"class="kanban_ready-Ul">
-
-                </ul>
+                
             </div>
             <button id="readyButton" class="kanban-board__add">
-                <span class="btnPlus">+</span> 
-                Add card
+                <img src="images/add-card.png" alt="#" class="kanban-board__add-plus">
+                <div id="readyButtonText" class="kanban-board__add-text">Add card</div>
             </button>
         </div>
-        <div class="kanban-board__tasks">
+        <div class="kanban-board__in-progress">
             <div class="kanban-board__main">
                 <h2 class="kanban-board__title">In Progress</h2>
                 <div class="kanban-board__main-list">
@@ -91,16 +89,14 @@
                 </div>
             </div>
             <div id="inprogressField" class="kanban-board__field">
-                <ul id="ulInProgress" class="kanban_ready-Ul">
-
-                </ul>
+              
             </div>
             <button id="inprogressButton" class="kanban-board__add">
-                <span class="btnPlus">+</span> 
-                Add card
+                <img src="images/add-card.png" alt="#" class="kanban-board__add-plus">
+                <div id="inprogressButtonText" class="kanban-board__add-text">Add card</div>
             </button>
         </div>
-        <div class="kanban-board__tasks">
+        <div class="kanban-board__finished">
             <div class="kanban-board__main">
                 <h2 class="kanban-board__title">Finished</h2>
                 <div class="kanban-board__main-list">
@@ -113,15 +109,15 @@
             
             </div>
             <button id="finishedButton" class="kanban-board__add">
-                <span class="btnPlus">+</span> 
-                Add card
+                <img src="images/add-card.png" alt="#" class="kanban-board__add-plus">
+                <div id="finishedButtonText" class="kanban-board__add-text">Add card</div>
             </button>
         </div>
 
     </main>
     <footer class="footer">
         <div class="footer__tasks">
-            <div class="footer__active-task">Active tasks: <span id="activeTask">0</span></div>
+            <div class="footer__active-task">Active tasks: 0</div>
             <div class="footer__finished-task">Finished tasks: 0</div>
         </div>
         <div class="footer__information">Kanban board by Nikolai Gogin, 2021</div>

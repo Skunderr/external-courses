@@ -1,0 +1,132 @@
+.kanban-board {
+    min-height: 576px;
+    background: #0079BF;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    padding-left: 18px;
+}
+
+.kanban-board__tasks {
+    width: 282px;
+    background: #EBECF0;
+    border-radius: 10px;
+    min-height: 100px;
+    margin-right: 23px;
+    margin-top: 20px;
+    padding: 10px 13px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.kanban-board__backlog {
+    padding-left: 18px;
+}
+
+.kanban-board__main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.kanban-board__task {
+    padding: 6px 8px;
+    max-width: 259px;
+    background: #fff;
+    border-radius: 5px;
+    color: #000;
+    font-style: 18px;
+    line-height: 21px;
+    margin: 15px 0;
+}
+
+.kanban_ready-Ul{
+    list-style: none;
+    padding: 0;
+}
+
+.kanban-board__input {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+}
+
+.kanban-board__create-input {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    padding: 5px 3px;
+    border-radius: 5px;
+}
+
+.kanban-board__add {
+    display: flex;
+    border: none;
+    cursor: pointer;
+    background: #EBECF0;
+    padding: 0;
+    font-size: 18px;
+    color: #5E6C84;
+}
+
+.kanban-board__add-plus {
+    margin-right: 3px;
+}
+
+.kanban-board__add:disabled {
+    color: #c6d5ee;
+    cursor: default;
+}
+
+.kanban-board__add:disabled:hover {
+    color: #c6d5ee;
+}
+
+.btnPlus {
+    font-size: 28px;
+    margin-right: 3px;
+    display: flex;
+    line-height: 17px;
+}
+
+.kanban-board__add:hover {
+    color: #0067A3;
+}
+
+.kanban-board__title {
+    margin: 0;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.ready-list {
+    background: #d7dadf;
+    border-radius: 5px;
+}
+
+.ready-items {
+    padding: 10px 7px;
+    list-style: none;
+}
+
+.ready-item {
+    background-color: #fff;
+    max-width: 100%;
+    min-height: 32px;
+    margin: 15px 0px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    padding-left: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ready-item:hover {
+    color: #0067A3;
+}

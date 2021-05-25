@@ -1,10 +1,8 @@
-function onChange(event) {
+onChange = (event) => {
     console.log(event.target.value);
 }
 
-document.getElementById('search').addEventListener('keyup', debounce(onChange, 300));
-
-function debounce(callback, time) {
+const debounce = (callback, time) => {
     let timeout;
     return function() {
         const functionCall = () => { 
@@ -17,3 +15,4 @@ function debounce(callback, time) {
     }
 }
   
+document.getElementById('search').addEventListener('keyup', debounce(onChange, 300));

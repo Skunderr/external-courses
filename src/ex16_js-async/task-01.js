@@ -1,4 +1,3 @@
-
 function ownFetch(url, method = 'GET', body = null) {
     return new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();

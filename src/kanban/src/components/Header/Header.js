@@ -5,7 +5,6 @@ import * as img from '../../images/header';
 const addList = 'add-list';
 const arrowDown = 'arrow-down';
 const userAvatar = 'user-avatar';
-
 export class Header {
     constructor() {
         this.element = new DomElement({
@@ -13,20 +12,20 @@ export class Header {
             className: css.header,
             html: `
             <header class="${css.header}">
-                <div class="${css.header__title-wrapper}">
-                    <div class="${css.header__main-list}">
-                        <div class="${css.main-listr__wrapper}">
-                            <div class="${css.main-list__string}">
-                                <div class="${css.main-list__circle}"></div>
-                                <div class="${css.main-list__line}"></div>
+                <div class="${css.header__title_wrapper}">
+                    <div class="${css.header__main_list}">
+                        <div class="${css.main_list__wrapper}">
+                            <div class="${css.main_list__string}">
+                                <div class="${css.main_list__circle}"></div>
+                                <div class="${css.main_list__line}"></div>
                             </div>
                             <div class="${css.main-list__string}">
-                                <div class="${css.main-list__circle}"></div>
-                                <div class="${css.main-list__line}"></div>
+                                <div class="${css.main_list__circle}"></div>
+                                <div class="${css.main_list__line}"></div>
                             </div>
                             <div class="${css.main-list__string}">
-                                <div class="${css.main-list__circle}"></div>
-                                <div class="${css.main-list__line}"></div>
+                                <div class="${css.main_list__circle}"></div>
+                                <div class="${css.main_list__line}"></div>
                             </div>
                         </div>
                     </div>
@@ -38,12 +37,15 @@ export class Header {
                         Create new list
                     </button>
                     <div class="${css.header__user-list}">
-                        <img src="${img[userAvatar]}" alt="#" class="${css.header__user-img}">
-                        <img src="${img[arrowDown]}" alt="#" class="${css.header__user-arrow}">
+                        <img src="${img[userAvatar]}" alt="#" class="${css.header__user_img}">
+                        <img src="${img[arrowDown]}" alt="#" class="${css.header__user_arrow}">
                     </div> 
                 </div>
             </header>
             `,
         }).element;
     }
+
+    addDropdown();
+    removeDropdown();
 }

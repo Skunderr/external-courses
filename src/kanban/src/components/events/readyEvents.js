@@ -1,4 +1,4 @@
-import base from './base.js';
+import './base.js';
 
 export const createListTaskReady = () => {
     base.readyAddCard.addEventListener('click', () => {

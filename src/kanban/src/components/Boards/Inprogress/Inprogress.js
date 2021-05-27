@@ -1,6 +1,6 @@
 import DomElement from '../../DomElement/DomElement';
-import css from '../board.module.css';
-import img from '../../../images/header';
+import { css } from '../board.module.css';
+import img from '../../../images/header/points.png';
 
 const points = 'points';
 

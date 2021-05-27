@@ -1,9 +1,6 @@
 import DomElement from '../../DomElement/DomElement';
-import css from '../board.module.css';
-import img from '../../../images/header';
-
-const points = 'points';
-
+import { css } from '../board.module.css';
+import img from '../../../images/header/points.png';
 export class Finished {
     constructor() {
         this.element = new DomElement({
@@ -15,7 +12,7 @@ export class Finished {
                     <h2 class="${css.kanban-board__title}">Finished</h2>
                     <div class="${css.kanban-board__main-list}">
                         <a href="#" class="${css.kanban-board__main-link}">
-                            <img src="${img[points]}" alt="#" class="${css.kanban-board__main-img}">
+                            <img src="${img}" alt="#" class="${css.kanban-board__main-img}">
                         </a>
                     </div>
                 </div>

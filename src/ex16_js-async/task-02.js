@@ -9,7 +9,8 @@ const debounce = (callback, time) => {
         if (timeout) {
             clearTimeout(timeout);
         }
-        timeout =setTimeout(() => {
+        
+        timeout = setTimeout(() => {
             callback(...args)
         }, time);
     };

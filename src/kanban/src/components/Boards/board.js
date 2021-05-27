@@ -1,10 +1,11 @@
-import DomElement from '../../DomElement/DomElement';
-import { css } from '../board.module.css';
-import img from '../../../images/header/points.png';
-export class Backlog {
+import DomElement from '../DomElement/DomElement';
+import { css } from './board.module.css';
+import img from '../../images/header/points.png';
+
+export class Board {
     constructor(title, subId) {
         this.element = new DomElement({
-            type: "backlog",
+            type: 'board',
             className: css.board,
             html: `
             <div class="${css.kanban_board__tasks} ${css.kanban_board__backlog}">
@@ -27,7 +28,4 @@ export class Backlog {
             `,
         }).element;
     }
-
-    addTaskBacklog();
-    loadBoard();
 }

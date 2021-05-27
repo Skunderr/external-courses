@@ -6,12 +6,12 @@
     background: #0067A3;
 }
 
-.header__title-wrapper {
+.header__title_wrapper {
     display: flex;
     margin-left: 14px;
 }
 
-.header__main-list {
+.header__main_ist {
     width: 45px;
     height: 45px;
     display: flex;
@@ -29,35 +29,35 @@
     margin-top: 6px;
 }
 
-.header__button-wrapper {
+.header__button_wrapper {
     display: flex;
     align-items: center;
 }
 
-.header__create-button {
+.header__create_button {
     outline: none;
     border: none;
     cursor: pointer;
 }
 
-.header__user-img {
+.header__user_img {
     background: #fff;
     border-radius: 50%;
 }
 
-.header__user-list {
+.header__user_list {
     display: flex;
     align-items: center;
     margin-left: 48px;
 }
 
-.header__user-wrapper {
+.header__user_wrapper {
     display: flex;
     align-items: center;
     cursor: pointer;
 }
 
-.header__user-items {
+.header__user_items {
     position: absolute;
     right: 7px;
     top: 50px;
@@ -68,7 +68,7 @@
     list-style: none;  
 }
     
-.header__user-item {
+.header__user_item {
     padding: 7px 10px;
     transition: all 0.4s ease-out;
     background: #fff;
@@ -77,7 +77,7 @@
     cursor: pointer;
 }
 
-.header__user-link {
+.header__user_link {
     color: inherit;
     text-decoration: none;
 }
@@ -87,7 +87,7 @@
     transform: scale(1.1);
 }
 
-.header__create-button {
+.header__create_button {
     width: 181px;
     height: 33px;
     display: flex;
@@ -99,21 +99,21 @@
     line-height: 21px;
 }
 
-.header__add-img {
+.header__add_img {
     margin-right: 13px;
 }
 
-.main-list__wrapper {
+.main_list__wrapper {
     background: none;
 }
 
-.main-list__string {
+.main_list__string {
     margin-bottom: 3px;
     display: flex;
     align-items: center;
 }
 
-.main-list__circle {
+.main_list__circle {
     width: 7px;
     height: 7px;
     border: 2px solid #fff;
@@ -121,7 +121,7 @@
     margin-right: 3px;
 }
 
-.main-list__line {
+.main_list__line {
     Width: 20px;
     Height: 2px;
     background: #fff;

@@ -45,7 +45,4 @@ export class Header {
             `,
         }).element;
     }
-
-    addDropdown();
-    removeDropdown();
 }

@@ -3,16 +3,16 @@ onChange = (event) => {
 }
 
 const debounce = (callback, time) => {
-    let timeout;
-    return function() {
-        const functionCall = () => { 
-            return callback.apply(this, arguments);
-        };
-
-        clearTimeout(timeout);
-
-        timeout = setTimeout(functionCall, time);
-    }
-}
+    let timeout; 
+    
+    return function(...args) {
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+        timeout =setTimeout(() => {
+            callback(...args)
+        }, time);
+    };
+};
   
 document.getElementById('search').addEventListener('keyup', debounce(onChange, 300));

@@ -1,99 +1,135 @@
 const gift = [];
 
-const sweetness = {
+const Sweetness = {
   tasty: true,
   bringJoy() {
     console.log(':-)');
   }
 };
 
-const candy = Object.create(sweetness);
-candy.rustleWrapper = function() {
-  console.log('this wrapper rustles');
+const Candy = {
+  rustleWrapper() {
+    console.log('this wrapper rustles');
+  }
 };
 
-const waffle = Object.create(sweetness);
-waffle.title = 'waffle';
-waffle.weight = '15g';
-waffle.filling = 'cream';
-waffle.crunch = function() {
-  console.log('crunch!');
+Candy.prototype = Sweetness;
+
+const Waffle = {
+  title: 'waffle',
+  weight: '15g',
+  filling: 'cream',
+  crunch() {
+    console.log('crunch!');
+  }
 };
 
-const chocolate = Object.create(sweetness);
-chocolate.weight= '100g';
-chocolate.meltInYourMouth = function() {
-  console.log('chocolate melts');
-};  
+Waffle.prototype = Sweetness;
 
-const whiteChocolate = Object.create(chocolate);
-whiteChocolate.title = 'white chocolate';
-whiteChocolate.color = 'white';
-whiteChocolate.filling = null;
+const Chocolate = {
+  weight: '100g',
+  meltInYourMouth() {
+    console.log('chocolate melts');
+  }
+};
+ 
+Chocolate.prototype = Sweetness;
 
-const bitterChocolate = Object.create(chocolate);
-bitterChocolate.title = 'bitter chocolate';
-bitterChocolate.taste = 'bitter';
-bitterChocolate.filling = null;
+const whiteChocolate = {
+  title: 'white chocolate',
+  color: 'white',
+  filling: null
+};
 
-const milkChocolate = Object.create(chocolate); 
-milkChocolate.title = 'milk chocolate';
-milkChocolate.filling = 'nuts';
+whiteChocolate.prototype = Chocolate;
 
-const chocolateCandy = Object.create(candy);
-chocolateCandy.title = 'chocolate candy';
-chocolateCandy.weight = '25g'; 
-chocolateCandy.glaze = 'chocolate';
-chocolateCandy.filling = null; 
+const bitterChocolate = {
+  title: 'bitter chocolate',
+  taste: 'bitter',
+  filling: null
+};
 
-const caramelCandy = Object.create(candy);
-caramelCandy.title = 'caramel candy';
-caramelCandy.weight = '15g';
-caramelCandy.glaze = 'caramel'; 
-caramelCandy.filling = 'marmalade'; 
+bitterChocolate.prototype = Chocolate;
 
-const chocolateCandyWithNuts = Object.create(chocolateCandy);
-chocolateCandyWithNuts.title = 'chocolate candy with nuts';
-chocolateCandyWithNuts.weight = '30g';
-chocolateCandyWithNuts.filling = 'nuts';
+const milkChocolate = {
+  title: 'milk chocolate',
+  filling: 'nuts'
+};
 
-const marmaladeCandy = Object.create(candy);
-marmaladeCandy.title = 'marmalade candy';
-marmaladeCandy.weight = '30g';
-marmaladeCandy.glaze = 'chocolate'; 
-marmaladeCandy.filling = 'marmalade';
+milkChocolate.prototype = Chocolate;
 
-gift.push(waffle, chocolateCandy, caramelCandy, chocolateCandyWithNuts, 
+const ChocolateCandy = {
+  title: 'chocolate candy',
+  weight: '25g', 
+  glaze: 'chocolate',
+  filling: null 
+};
+
+ChocolateCandy.prototype = Candy;
+
+const caramelCandy = {
+  title: 'caramel candy',
+  weight: '15g',
+  glaze: 'caramel', 
+  filling: 'marmalade'
+};
+
+caramelCandy.prototype = Candy;
+
+const chocolateCandyWithNuts = {
+  title: 'chocolate candy with nuts',
+  weight: '30g',
+  filling: 'nuts'
+};
+
+chocolateCandyWithNuts.prototype = ChocolateCandy;
+
+const marmaladeCandy = {
+  title: 'marmalade candy',
+  weight: '30g',
+  glaze: 'chocolate',
+  filling: 'marmalade'
+};
+
+marmaladeCandy.prototype = Candy;
+
+gift.push(Waffle, ChocolateCandy, caramelCandy, chocolateCandyWithNuts, 
   marmaladeCandy, milkChocolate, bitterChocolate, whiteChocolate);
 
-function getWeightOfGift(gift) {
-  let weight = 0;
-
+getWeightOfGift = (gift) => {
+  let giftWeight = 0;
+  
   gift.forEach(elem => {
-    weight += parseFloat(elem.weight);
+    if (elem.weight) {
+      giftWeight += parseFloat(elem.weight);
+    }
+
+    if (!elem.weight) {
+      giftWeight += parseFloat(elem.prototype.weight);
+    }
   });
 
-  return weight;
-}
+  return giftWeight;
+};
 
-function getGift(name) {
+getGift = (name) => {
   return gift.find(elem => elem.title === name);
-}
+};
 
-function sortGiftByFilling() {
+sortGiftByFilling = (filling) => {
   const sweetnessWithNuts  = [];
 
   gift.forEach(elem => {
-    if (elem.filling === 'nuts') {
+    if (elem.filling === filling) {
       sweetnessWithNuts.push(elem);
     }
   });
     
   return sweetnessWithNuts;
-}
+};
 
 getWeightOfGift(gift);
 
 getGift('milk chocolate');
 
-sortGiftByFilling();
+sortGiftByFilling('nuts');

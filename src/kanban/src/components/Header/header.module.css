@@ -11,7 +11,7 @@
     margin-left: 14px;
 }
 
-.header__main_ist {
+.header__main_list {
     width: 45px;
     height: 45px;
     display: flex;
@@ -82,7 +82,7 @@
     text-decoration: none;
 }
 
-.header__user-item:hover { 
+.header__user_item:hover { 
     color: #1685c5;
     transform: scale(1.1);
 }

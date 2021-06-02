@@ -1,21 +1,22 @@
 import './base.js';
+import '../Field/field.module.css'
 
 export const createListTaskFinished = () => {
-    base.finishedAddCard.addEventListener('click', () => {
+   finishedAddCard.addEventListener('click', addTaskFinished = () => {
         const ulElement = document.querySelector('#finishedItems');
-    
+
         if (ulElement === null) {
             const finishedContainer = document.createElement('div');
             finishedContainer.classList.add('ready-list');
             finishedContainer.setAttribute('id', 'finishedList');
-            base.finishedTasksField.appendChild(finishedContainer);
-    
+            finishedTasksField.appendChild(finishedContainer);
+
             const finishedUl = document.createElement('ul');
             finishedUl.classList.add('ready-items');
             finishedUl.setAttribute('id', 'finishedItems');
             finishedContainer.appendChild(finishedUl);
-    
-            base.dataInprogress.forEach(elem => {
+
+            dataInprogress.forEach(elem => {
                 const finishedLi = document.createElement('li');
                 finishedLi.classList.add('ready-item');
                 finishedLi.innerHTML = elem;
@@ -23,7 +24,6 @@ export const createListTaskFinished = () => {
             });
         }
     });
-    
 }
 
 export const addTaskFinished = () => {
@@ -34,7 +34,7 @@ export const addTaskFinished = () => {
     
         const ul = document.createElement('ul');
         ul.setAttribute('id', 'ulFinished');
-        ul.classList.add('kanban_ready-Ul');
+        ul.classList.add('kanban_ready_Ul');
         base.finishedTasksField.appendChild(ul);
         ul.appendChild(selectedFinished);
     

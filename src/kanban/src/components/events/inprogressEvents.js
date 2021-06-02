@@ -1,21 +1,22 @@
 import './base.js';
+import '../Field/field.module.css'
 
 export const createListTaskInprogress = () => {
-    base.inprogressAddCard.addEventListener('click', () => {
-        const ulElement = document.querySelector('#inprogressItems');
-    
-        if (ulElement === null) {
-            const inprogressContainer = document.createElement('div');
+    inprogressAddCard.addEventListener('click', addTaskinprogress = () => {
+    const ulElement = document.querySelector('#inprogressItems');
+
+    if (ulElement === null) {
+        const inprogressContainer = document.createElement('div');
             inprogressContainer.classList.add('ready-list');
             inprogressContainer.setAttribute('id', 'inprogressList');
-            base.inprogressTasksField.appendChild(inprogressContainer);
-    
+            inprogressTasksField.appendChild(inprogressContainer);
+
             const inprogressUl = document.createElement('ul');
             inprogressUl.classList.add('ready-items');
             inprogressUl.setAttribute('id', 'inprogressItems');
             inprogressContainer.appendChild(inprogressUl);
-    
-            base.dataReady.forEach(elem => {
+
+            dataReady.forEach(elem => {
                 const inprogressLi = document.createElement('li');
                 inprogressLi.classList.add('ready-item');
                 inprogressLi.innerHTML = elem;
@@ -26,43 +27,48 @@ export const createListTaskInprogress = () => {
 }
 
 export const addTaskInprogress = () => {
-    base.inprogressTasksField.addEventListener('click', e => {
+   inprogressTasksField.addEventListener("click", function (e) {
         const selectedInprogress = e.target;
-    
+
         document.querySelector('#inprogressList').remove();
-    
-        const ulInprogress = document.querySelector('#ulInProgress')
-        ulInprogress.appendChild(selectedInprogress);
-    
-        base.dataReady.forEach(elem => {
+
+        const ul = document.createElement('ul')
+        ul.setAttribute('id', 'ulInProgress')
+        ul.classList.add('kanban_ready-Ul')
+        inprogressTasksField.appendChild(ul);
+        ul.appendChild(selectedInprogress);
+
+        dataReady.forEach(elem => {
             if(selectedInprogress.innerHTML == elem) {
-                base.dataReady.splice(base.dataReady.lastIndexOf(elem), 1);
+                dataReady.splice(dataReady.lastIndexOf(elem), 1);
             }
         });
-    
+
         const readyUl = document.querySelector('#ulInReady');
         const childReady = readyUl.childNodes;
-    
+
         childReady.forEach(elem => {
             if (selectedInprogress.innerHTML == elem.innerHTML) {
                 elem.remove();
-    
-                base.dataReady.forEach(item => {
+
+                dataReady.forEach(item => {
                     if (selectedInprogress.innerHTML == item) {
-                        base.dataReady.splice(base.dataReady.indexOf(item), 1);
+                        dataReady.splice(dataReady.indexOf(item), 1);
                     }
                 });
             }
         });
-        
-        base.dataInprogress.push(selectedInprogress.textContent);
-    
-        disableBtn(base.dataReady, base.inprogressAddCard);
-        enableButton(base.dataReady, base.inprogressAddCard);
-        enableButton(base.dataInprogress, base.finishedAddCard);
-    
-        localStorage.setItem('inprogressElement', JSON.stringify(base.dataInprogress));
-        localStorage.setItem('readyElement', JSON.stringify(base.dataReady));
+
+        dataInprogress.push(selectedInprogress.textContent);
+
+        disableBtn(dataReady, inprogressAddCard, 'inprogressButtonText');
+
+        includeBtn(dataReady, inprogressAddCard, 'inprogressButtonText');
+
+        includeBtn(dataInprogress, finishedAddCard, 'finishedButtonText');
+
+        localStorage.setItem('inprogressElement', JSON.stringify(dataInprogress));
+        localStorage.setItem('readyElement', JSON.stringify(dataReady));
     });
 }
 

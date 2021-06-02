@@ -1,33 +1,33 @@
-const backlogAddCard = document.querySelector('#backlogButton');
-const readyAddCard = document.querySelector('#readyButton');
-const inprogressAddCard = document.querySelector('#inprogressButton');
-const finishedAddCard = document.querySelector('#finishedButton');
-const backlogTasksField = document.querySelector('#backlogField');
-const readyTasksField = document.querySelector('#readyField');
-const inprogressTasksField = document.querySelector('#inprogressField');
-const finishedTasksField = document.querySelector('#finishedField');
-const ulElement = document.querySelector('#readyItems');
+export const backlogAddCard = document.querySelector('#backlogButton');
+export const readyAddCard = document.querySelector('#readyButton');
+export const inprogressAddCard = document.querySelector('#inprogressButton');
+export const finishedAddCard = document.querySelector('#finishedButton');
+export const backlogTasksField = document.querySelector('#backlogField');
+export const readyTasksField = document.querySelector('#readyField');
+export const inprogressTasksField = document.querySelector('#inprogressField');
+export const finishedTasksField = document.querySelector('#finishedField');
+export const ulElement = document.querySelector('#readyItems');
 
-const activeTask = document.querySelector('#activeTask');
-const finishedTask = document.querySelector('#finishedTask');
+export const activeTask = document.querySelector('#activeTask');
+export const finishedTask = document.querySelector('#finishedTask');
 
-let backlogCounter = 0;
-let activeTasksCounter = 0;
-let finishedTasksCounter = 0;
+export let backlogCounter = 0;
+export let activeTasksCounter = 0;
+export let finishedTasksCounter = 0;
 
-const dataBacklog = [];
-let dataValues = [];
-let dataReady = [];
-let dataInprogress = [];
-let dataFinished = [];
+export const dataBacklog = [];
+export let dataValues = [];
+export let dataReady = [];
+export let dataInprogress = [];
+export let dataFinished = [];
 
-disableBtn = (data, btn) => {
+export const disableBtn = (data, btn) => {
     if (data.length === 0) {
         btn.setAttribute('disabled', 'disabled');
     } 
 }
 
-enableButton = (data, btn) => {
+export const enableButton = (data, btn) => {
     if (data.length !== 0) {
         btn.removeAttribute('disabled');
     }  

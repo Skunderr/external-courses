@@ -1,34 +1,25 @@
-import './base.js';
 import { Header } from './components/Header/Header.js';
-import { Board } from './components/Boards/board.js';
+import { Field } from './components/Field/Field.js';
 import { Footer } from './components/Footer/Footer.js';
-import './components/events/backlogEvent.js';
-import './components/events/readyEvent.js';
-import './components/events/inprogressEvent.js';
-import './components/events/finishedEvent.js';
-import './components/events/dropdownEvent.js';
-import './components/events/loadEvent.js';
+import { addDropdown, removeDropdown } from './components/events/dropdown.js';
+import { addTaskBacklog } from './components/events/backlogEvent.js';
+import { addTaskReady, createListTaskReady } from './components/events/readyEvent.js';
+import { addTaskInprogress, createListTaskInprogress } from './components/events/inprogressEvent.js';
+import { addTaskFinished, createListTaskFinished } from './components/events/finishedEvent.js';
 
 const header = new Header();
-const backlog = new Board('Backlog', 'backlog');
-const ready = new Board('Ready', 'ready');
-const inprogress = new Board('In Progress', 'inprogress');
-const finished = new Board('Finished', 'finished');
+const field = new Field();
 const footer = new Footer();
 
 document.body.appendChild(header.element);
-addDropdown();
-removeDropdown();
-document.body.appendChild(backlog.element);
+addDropdown()
+removeDropdown()
+document.body.appendChild(field.element);
 addTaskBacklog();
-document.body.appendChild(ready.element);
 createListTaskReady();
 addTaskReady();
-document.body.appendChild(inprogress.element);
-createListTaskInprogress();
 addTaskInprogress();
-document.body.appendChild(finished.element);
-createListTaskFinished();
+createListTaskInprogress();
 addTaskFinished();
+createListTaskFinished();
 document.body.appendChild(footer.element);
-loadBoard();
